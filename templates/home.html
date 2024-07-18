@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WasteLess</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="ml.css"> -->
+</head>
+
+<!-- </html> -->
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="developers.html">Contact Us</a>
+            </li>
+            
+  
+          </ul>
+          <a class="navbar-brand" href="#">WasteLess</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <h1>ML Model Demo</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+      <label for="day">Store:</label>
+      <input type="text" name="store" id="store"><br>
+      <label for="month">Item:</label>
+      <input type="text" name="item" id="item"><br>
+      <label for="weekend">Day:</label>
+      <input type="text" name="day" id="day"><br>
+      <label for="item">Month:</label>
+      <input type="text" name="month" id="month"><br>
+      <label for="store">Weekend:</label>
+      <input type="text" name="weekend" id="weekend"><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    {{prediction_text}} -->
+    
+
+    <form action="{{ url_for('predict') }}" method="POST" class="action">
+      <div class="form mx-4 my-2 align-items-center">
+        <form class="needs-validation" novalidate>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationCustom01"><b>Store</b></label>
+              
+              <input type="text" name="store" id="store" 
+              
+              class="form-control" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="validationCustom02"><b>Item</b></label>
+              
+              <input type="text" name="item" id="item" 
+              
+              class="form-control" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05"><b>day</b></label>
+           
+            <input type="text" name="day" id="day" class="form-control" 
+            
+             required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05"><b>Month</b></label>
+            <input type="text" name="month" id="month" class="form-control" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05"><b>Weekend</b></label>
+            <input type="text" name="weekend" id="weekend" class="form-control" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="sub">
+            <button type="button" input type="submit" value="Submit" class="btn btn-outline-primary">submit</button>
+          </div>
+          
+          
+        </form>
+        
+        <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+      </div>
+      <!-- =================================================== -->
+
+      </form>
+    </div>
+    <div class="ans mx-4 my-2">
+      
+       {{prediction_text}}
+      
+    </div>
+  </body>
+</html>
